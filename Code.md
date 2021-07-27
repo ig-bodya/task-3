@@ -3,7 +3,7 @@ game" Rock,paper,..."
  КОД:
  
  
- import java.security.SecureRandom;
+import java.security.SecureRandom;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -36,17 +36,18 @@ public class Game {
             int sch=0;
             int player_move = func1();
 
-            if (player_move!=0){
-                while (sch != 1) {
-                    if (player_move > 0 && player_move <= args.length) {
-                        sch++;
-                    } else {
-                        System.out.println("Not available move");
 
-                        player_move = func1();
-                    }
+                while (sch != 1) {
+                    if (player_move != 0) {
+                        if (player_move > 0 && player_move <= args.length) {
+                            sch++;
+                        } else {
+                            System.out.println("Not available move");
+
+                            player_move = func1();
+                        }
+                    }else {return;
                 }
-            }else {return;
             }
             System.out.println("Your move:" + args[player_move - 1]);
             System.out.println("Computer move:" + args[pc_move - 1]);
@@ -79,6 +80,9 @@ public class Game {
         return c;
     }
 }
+
+
+
 
 
 
